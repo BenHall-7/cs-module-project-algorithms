@@ -5,11 +5,11 @@ import sys
 # the number of solutions involving Pennies, Nickels, Dimes, and Half-dollars
 # can be expressed in O(1) time with MATH
 def solve_pndh(amount):
-    count = amount // 50 + 1
-    n = (amount % 50) // 10 + 1
-    solution = count * (50*count*count + 15*count*(2*n - 5) + 6*n*n - 30*n + 25) // 6
+    a = amount // 50 + 1
+    b = (amount % 50) // 10 + 1
+    solution = a * (50*a*a + 15*a*(2*b - 5) + 6*b*b - 30*b + 25) // 6
     if amount % 10 >= 5:
-        solution += (5*count + 2*n - 5) * count // 2
+        solution += (5*a + 2*b - 5) * a // 2
     return solution
 
 def making_change(amount, denominations):
